@@ -41,17 +41,22 @@ int main(int argc, char** argv){
 	inventory.push_back(std::move(a));
 	inventory.push_back(std::move(b));
 
-	//Car c(b);
-	//c.setModel("Ford F150");
-	//std::cout << "Car c: " << c << std::endl;
-	/*
+	std::cout << "Inventory is now: " << std::endl;
+	for(auto it = inventory.begin(); it != inventory.end(); ++it) {
+		std::cout << *it << std::endl;
+	}
+
+	Car c(b);
+	c.setModel("Ford F150");
+	std::cout << "Car c: " << c << std::endl;
+	
 	std::cout << "Customer wants to trade in " << c << std::endl;
 	std::cout << "They want to get " << a << std::endl;
-	makeTrade(inventory, c, a);
+	makeTrade(inventory, std::move(c), std::move(a));
 
 	std::cout << "After trade, inventory is: " << std::endl;
 	std::cout << "===========================" << std::endl;
 	for(auto it = inventory.begin(); it != inventory.end(); ++it){
 		std::cout << *it << std::endl;
-	}*/
+	}
 }

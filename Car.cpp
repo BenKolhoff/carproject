@@ -15,6 +15,7 @@ Car::Car(const Car& other) {
 	this->id = Car::current_id++;
 	this->year = other.year;
 	this->model = other.model;
+	this->records = other.getRecords();
 	
 	std::cout << "Copy constructor called" << std::endl;
 }
@@ -35,6 +36,7 @@ Car::Car(const Car&& other) noexcept {
 		this->id = other.id;
 		this->year = other.year;
 		this->model = other.model;
+		this->records = other.getRecords();
 	}
 }
 

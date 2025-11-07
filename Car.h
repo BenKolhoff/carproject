@@ -11,6 +11,7 @@ class Car {
 		Car(const Car&);
 		Car& operator=(const Car&);
 		Car(const Car&&) noexcept;
+		bool operator<(const Car&);
 		int getId() const;
 		void setYear(int);
 		int getYear() const;

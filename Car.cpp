@@ -38,6 +38,29 @@ Car::Car(const Car&& other) noexcept {
 	}
 }
 
+bool Car::operator<(const Car& other) {
+	std::cout << "Whatever this is is called" << std::endl;
+
+	double this_cost = 0;
+	
+	for (auto it = records.begin(); it != records.end(); ++it) {
+		std::cout << "specific iteration of this_cost: " << (*it).getCost() << std::endl;
+		this_cost += (*it).getCost();
+	}
+	
+	std::cout << "This_cost: " << this_cost << std::endl;
+	
+	double other_cost = 0;
+
+	for (auto it = other.records.begin(); it != other.records.end(); ++it) {
+		other_cost += (*it).getCost();
+	}
+
+	std::cout << "other_Cost: " << other_cost << std::endl;
+
+	return this_cost < other_cost;
+}
+
 int Car::getId() const {
 	return this->id;
 }

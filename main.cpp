@@ -23,7 +23,7 @@ void makeTrade(std::vector<Car>& inventory, Car tradein, Car tradeout){
 	if(it != inventory.end()){
 		inventory.erase(it);
 	}
-	inventory.push_back(tradein);
+	inventory.push_back(std::move(tradein));
 }
 
 int main(int argc, char** argv){

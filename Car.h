@@ -10,7 +10,7 @@ class Car {
 		Car(int, std::string);
 		Car(const Car&);
 		Car& operator=(const Car&);
-		Car(Car&&);
+		Car(const Car&&) noexcept;
 		int getId() const;
 		void setYear(int);
 		int getYear() const;

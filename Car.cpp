@@ -21,10 +21,6 @@ Car::Car(const Car& other) {
 
 // Copy operator constructor
 Car& Car::operator=(const Car& other) {
-	//std::swap(this->id, other.id);
-	//std::swap(this->year, other.year);
-	//std::swap(this->model, other.model);
-	
 	this->id = other.id;
 	this->year = other.year;
 	this->model = other.model;
@@ -33,7 +29,7 @@ Car& Car::operator=(const Car& other) {
 }
 
 // Move constructor
-Car::Car(Car&& other) {
+Car::Car(const Car&& other) noexcept {
 	std::cout << "Move constructor called" << std::endl;
 	if (this != &other) {
 		this->id = other.id;
